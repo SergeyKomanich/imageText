@@ -1,12 +1,12 @@
 import pytesseract
 from PIL import Image
 
-img = Image.open("image_with_phone.png.png")
-pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+image = Image.open("text_pa.jpg")
+pytesseract.pytesseract.tesseract_cmd = r"/usr/bin/tesseract"
 
-custom_config = r'--oem 3 --psm 13'
-text = pytesseract.image_to_string(img, config=custom_config)
+
+text = pytesseract.image_to_string(image, lang="ukr")
 print(text.strip())
 
-with open('phone_numbers.txt', 'a') as f:
-    f.write(text.strip()+"\n")
+with open('text_test.txt', 'a', encoding= 'utf-8') as file:
+    file.write(text.strip() + "\n")

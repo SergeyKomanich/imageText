@@ -1,11 +1,11 @@
 import pytesseract
 from PIL import Image
 
-img = Image.open("test_text.png")
-pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+image = Image.open("text_pa.jpg")
+pytesseract.pytesseract.tesseract_cmd = r"/usr/bin/tesseract"
 
-text = pytesseract.image_to_string(img, lang="ukr")
+text = pytesseract.image_to_string(image, lang="ukr")
 print(text.strip())
 
-with open('test_text.txt', 'a') as f:
-    f.write(text.strip()+"\n")
+with open('test_text.txt', 'a', encoding='utf-8') as file:
+    file.write(text.strip()+"\n")
