@@ -1,0 +1,7 @@
+pip install pytesseract pillow
+
+for windows - https://github.com/UB-Mannheim/tesseract/wiki
+
+for Linux - sudo apt install tesseract-ocr -y
+install lenguage pack - sudo apt install tesseract-ocr-ukr/ru/eng...
+install all languages - sudo apt install tesseract-ocr-all -y
